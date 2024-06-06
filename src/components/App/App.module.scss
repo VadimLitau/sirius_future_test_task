@@ -1,0 +1,4 @@
+.mainWrap {
+	width: 1440px;
+	@include flex_column;
+}
