@@ -1,25 +1,27 @@
-import { ChangeEvent, SetStateAction, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 const useForm = () => {
 	interface IUseForm {
 		email: string;
 		password: string;
+		rememberMe: boolean;
 	}
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const [state, setState] = useState<IUseForm & any>({
+
+	const [state, setState] = useState<IUseForm>({
 		email: "",
 		password: "",
+		rememberMe: false,
 	});
 
-	const handleChange = (
-		e: SetStateAction<IUseForm> & ChangeEvent<HTMLInputElement>
-	) => {
-		e.persist();
-		setState((state: IUseForm) => ({
-			...state,
-			[e.target.name]: e.target.value,
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const { name, type, value, checked } = e.target;
+		setState((prevState) => ({
+			...prevState,
+			[name]: type === "checkbox" ? checked : value,
 		}));
 	};
-	return [state, handleChange];
+
+	return [state, handleChange] as const;
 };
+
 export default useForm;
