@@ -1,9 +1,9 @@
-import style from "./signInPage.module.scss";
+import style from "./signUpPage.module.scss";
 import logo from "../assets/images/logo.png";
 import Input from "../components/Input/Input";
 import useForm from "../hooks/useForm";
 
-export function SignInPage() {
+export function SignUpPage() {
 	const [values, setValues] = useForm();
 	return (
 		<section className={style.entryWrap}>

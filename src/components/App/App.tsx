@@ -1,10 +1,10 @@
-import { SignInPage } from "../../pages/signInPage";
+import { SignUpPage } from "../../pages/signUpPage";
 import style from "./App.module.scss";
 
 function App() {
 	return (
 		<div className={style.mainWrap}>
-			<SignInPage />
+			<SignUpPage />
 		</div>
 	);
 }
