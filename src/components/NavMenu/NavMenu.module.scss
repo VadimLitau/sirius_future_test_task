@@ -1,0 +1,24 @@
+.menuList {
+	align-self: flex-start;
+}
+
+.menuList_item {
+	@include flex_row;
+	align-items: center;
+	padding: 8px 24px 8px 44px;
+	border-radius: 0 30px 30px 0;
+	span {
+		font-size: 16px;
+		line-height: 21px;
+		color: $color-menu_black_text;
+		margin-left: 8px;
+	}
+}
+
+.menuList_item_activ {
+	background: $color-menu_active_item;
+
+	span {
+		color: $color-white;
+	}
+}

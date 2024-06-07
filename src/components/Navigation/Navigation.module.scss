@@ -1,0 +1,9 @@
+.navigation {
+	width: 236px;
+	background-color: $color-menu_background;
+	border-radius: 30px;
+	@include flex-column;
+	img {
+		margin: 44px 0 40px 0;
+	}
+}
