@@ -1,4 +1,5 @@
 .entry {
+	margin-top: 13px;
 	width: 340px;
 	display: flex;
 	flex-direction: column;
@@ -25,4 +26,52 @@
 			margin-left: 5px;
 		}
 	}
+}
+
+.btnWrap {
+	margin-top: 34px;
+}
+
+.linksList {
+	width: 100%;
+	@include flex_row;
+	justify-content: space-between;
+	margin-top: 14px;
+	li {
+		font-size: 16px;
+		line-height: 21.6px;
+		color: $color-link;
+	}
+}
+
+.signInWrap {
+	@include flex_column;
+	margin-top: 74px;
+	list-style-type: none;
+	li {
+		font-size: 16px;
+		line-height: 21.6px;
+	}
+	.signIn {
+		margin-top: 6px;
+		color: $color-link;
+	}
+}
+
+.languangeList {
+	@include flex_row;
+	margin-top: 110px;
+}
+.languageList_item {
+	margin-right: 10px;
+	font-size: 16px;
+	line-height: 21.6px;
+	text-align: left;
+	color: $color-grey_text;
+	cursor: pointer;
+}
+.languageList_item_activ {
+	font-size: 24px;
+	line-height: 21px;
+	color: $color-violet_border;
 }

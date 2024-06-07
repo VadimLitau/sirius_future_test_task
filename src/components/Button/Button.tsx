@@ -7,6 +7,7 @@ interface IButton {
 	backgroundColor: string;
 	colorText: string;
 	paddingBtn: string;
+	type?: "button" | "submit" | "reset";
 }
 
 export function Button({
@@ -16,11 +17,12 @@ export function Button({
 	backgroundColor,
 	colorText,
 	paddingBtn,
+	type,
 }: IButton) {
 	return (
 		<div className={style.wrap}>
 			<button
-				type="button"
+				type={type}
 				onClick={onClick}
 				className={dashed ? style.dashed : ""}
 				style={{
