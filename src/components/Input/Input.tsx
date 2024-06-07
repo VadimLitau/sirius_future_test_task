@@ -1,13 +1,13 @@
 import style from "./input.module.scss";
-import HideText from "../../images/hide_text.svg?react";
-import { useState } from "react";
+import HideText from "../../assets/images/hide_text.svg?react";
+import { ChangeEvent, useState } from "react";
 // import { ChangeEvent } from "react";
 
 interface IInput {
 	placeholder: string;
 	maxLegtn?: number;
 	value: string;
-	onChange: () => void;
+	onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 	name: string;
 	hide?: boolean;
 }
@@ -29,7 +29,9 @@ function Input({
 				placeholder={placeholder}
 				maxLength={maxLegtn}
 				value={value}
-				onChange={onChange}
+				onChange={(e) => {
+					onChange(e);
+				}}
 				name={name}
 			/>
 			{hide ? (

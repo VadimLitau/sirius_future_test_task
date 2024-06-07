@@ -1,12 +1,14 @@
 .input {
 	width: 100%;
-	padding: 10px 12px 10px 12px;
+	padding: 6px 12px;
 	border-radius: 8px;
 	border: 1px solid $color-input_dorder;
 }
 
 .input:placeholder {
 	color: $color-grey_text;
+	font-size: 12px;
+	line-height: 16.2px;
 }
 .inputWrap {
 	width: 100%;
