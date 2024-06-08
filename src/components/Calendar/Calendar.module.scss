@@ -1,0 +1,18 @@
+.app__container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #72757a;
+	height: 80vh;
+	width: 100vw;
+	margin-inline: auto;
+}
+
+.grey {
+	color: #72757a;
+}
+
+.red {
+	color: tomato;
+}
