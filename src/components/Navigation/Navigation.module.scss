@@ -7,3 +7,34 @@
 		margin: 44px 0 40px 0;
 	}
 }
+
+.banner {
+	background: $color-background;
+	border-radius: 15px;
+	width: 196px;
+	margin: 49px 0 24px;
+	@include flex-column;
+	align-items: flex-start;
+	padding-left: 16px;
+	background-image: url("../../assets/images/banner_bgi.svg");
+	background-repeat: no-repeat;
+	background-position: bottom right;
+
+	h2 {
+		font-size: 16px;
+		line-height: 20px;
+		margin: 16px 0 4px 0;
+	}
+	p {
+		font-size: 10px;
+		font-weight: 300;
+		line-height: 12px;
+		text-align: left;
+		max-width: 146px;
+		margin-bottom: 10px;
+	}
+	button {
+		font-size: 12px;
+		margin-bottom: 10px;
+	}
+}
