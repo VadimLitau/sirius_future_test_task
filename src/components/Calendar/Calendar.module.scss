@@ -8,11 +8,82 @@
 	width: 100vw;
 	margin-inline: auto;
 }
-
-.grey {
-	color: #72757a;
+.montBtnWrap {
+	@include flex_row;
+	align-items: center;
+	justify-content: space-between;
+	width: 156px;
+	div {
+		font-size: 16px;
+		line-height: 20px;
+		font-family: $font-regular_bold;
+		// padding: 0 16px;
+		span {
+			padding-left: 5px;
+		}
+	}
+	div::first-letter {
+		text-transform: uppercase;
+	}
 }
 
-.red {
-	color: tomato;
+.calendarWrap {
+	max-width: 1072px;
+}
+.calendarHeader {
+	@include flex_row;
+	align-items: center;
+}
+.thisDay {
+	margin: 0 16px 0 32px;
+	padding: 8px 20.5px;
+	border: 1px solid $color-dark_violet_btn;
+	border-radius: 15px;
+	font-size: 12px;
+	line-height: 16.2px;
+}
+.weekDaysWrap {
+	@include flex_row;
+	margin-top: 14px;
+	align-items: center;
+	border-bottom: 2px solid $color-input_dorder;
+	div {
+		@include flex_row;
+		justify-content: flex-end;
+		width: 153px;
+		height: 24px;
+		margin-bottom: -3px;
+		p {
+			color: $color-grey_text;
+			padding-right: 0px;
+		}
+		p::first-letter {
+			text-transform: uppercase;
+		}
+	}
+}
+
+.calendarDaysWrap {
+	@include flex_row;
+	flex-wrap: wrap;
+}
+.calendarDay {
+	@include flex_row;
+	justify-content: flex-end;
+	width: 153px;
+	height: 101px;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 12px;
+	border: 1px solid $color-input_dorder;
+	border-top: none;
+	padding: 4px 4px 0 0;
+}
+.dayOff {
+	background-color: $color-dayOff_background;
+}
+.sheduleEdit {
+	margin-bottom: 27px;
+	@include flex_row;
+	justify-content: space-between;
 }

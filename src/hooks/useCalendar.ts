@@ -23,7 +23,6 @@ export const useCalendar = ({
 	locale = "default",
 	selectedDate: date,
 }: IUseCalendar) => {
-	const [mode, setMode] = useState<"days" | "monthes" | "years">("days");
 	const [selectedDate, setSelectedDate] = useState(createDate({ date }));
 	const [selectedMonth, setSelectedMonth] = useState(
 		createMonth({
@@ -61,7 +60,6 @@ export const useCalendar = ({
 		const firstDay = days[0];
 		const lastDay = days[monthNumberOfDays - 1];
 		const shiftIndex = firstWeekDay - 1;
-		console.log(lastDay.dayNumberInWeek);
 		const numberOfPrevDays =
 			firstDay.dayNumberInWeek - 1 - shiftIndex < 0
 				? 7 - (firstWeekDay - firstDay.dayNumberInWeek)
@@ -96,42 +94,37 @@ export const useCalendar = ({
 	}, [selectedMonth.year, selectedMonth.monthIndex, selectedYear]);
 
 	const onClickArrow = (direction: "right" | "left") => {
-		if (mode === "days") {
-			const monthIndex =
-				direction === "left"
-					? selectedMonth.monthIndex - 1
-					: selectedMonth.monthIndex + 1;
+		const monthIndex =
+			direction === "left"
+				? selectedMonth.monthIndex - 1
+				: selectedMonth.monthIndex + 1;
 
-			if (monthIndex === -1) {
-				const year = selectedYear - 1;
-				setSelectedYear(year);
-				if (!selectedYearInterval.includes(year)) {
-					setSelectedYearInterval(getYearsInterval(year));
-				}
-				return setSelectedMonth(
-					createMonth({ date: new Date(year, 11), locale })
-				);
-			}
-
-			if (monthIndex === 12) {
-				const year = selectedYear + 1;
-				setSelectedYear(year);
-				if (!selectedYearInterval.includes(year)) {
-					setSelectedYearInterval(getYearsInterval(year));
-				}
-				return setSelectedMonth(
-					createMonth({ date: new Date(year, 0), locale })
-				);
+		if (monthIndex === -1) {
+			const year = selectedYear - 1;
+			setSelectedYear(year);
+			if (!selectedYearInterval.includes(year)) {
+				setSelectedYearInterval(getYearsInterval(year));
 			}
 			return setSelectedMonth(
-				createMonth({ date: new Date(selectedYear, monthIndex), locale })
+				createMonth({ date: new Date(year, 11), locale })
 			);
 		}
+
+		if (monthIndex === 12) {
+			const year = selectedYear + 1;
+			setSelectedYear(year);
+			if (!selectedYearInterval.includes(year)) {
+				setSelectedYearInterval(getYearsInterval(year));
+			}
+			return setSelectedMonth(createMonth({ date: new Date(year, 0), locale }));
+		}
+		return setSelectedMonth(
+			createMonth({ date: new Date(selectedYear, monthIndex), locale })
+		);
 	};
 
 	return {
 		state: {
-			mode,
 			calendarDays,
 			weekDaysNames,
 			monthesNames,
@@ -141,7 +134,6 @@ export const useCalendar = ({
 			selectedYearInterval,
 		},
 		functions: {
-			setMode,
 			setSelectedDate,
 			onClickArrow,
 		},
