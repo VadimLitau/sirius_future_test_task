@@ -1,12 +1,7 @@
-import { ShedulePage } from "../../pages/shedulePage";
 import style from "./App.module.scss";
 
 function App() {
-	return (
-		<div className={style.mainWrap}>
-			<ShedulePage />
-		</div>
-	);
+	return <div className={style.mainWrap}></div>;
 }
 
 export default App;
