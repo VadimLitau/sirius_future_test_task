@@ -1,0 +1,26 @@
+.bannerWrap {
+	width: 526px;
+	height: 248px;
+	border-radius: 30px;
+	// background-image: url(../../assets/images/banner_image.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+	@include flex_column;
+	align-items: flex-start;
+	padding: 56px 0 50px 40px;
+	span {
+		max-width: 314px;
+		color: $color-white;
+		h2 {
+			font-size: 32px;
+			line-height: 32px;
+
+			margin-bottom: 12px;
+		}
+		p {
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 20px;
+		}
+	}
+}
