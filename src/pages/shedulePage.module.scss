@@ -1,0 +1,19 @@
+.wrap {
+	padding: 0 50px;
+}
+
+.main {
+	@include flex_row;
+	justify-content: end;
+	margin-right: -50px;
+}
+.content {
+	margin-left: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+}
+.testWrap {
+	margin-top: -45px;
+	@include flex_row;
+}

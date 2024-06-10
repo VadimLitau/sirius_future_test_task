@@ -5,8 +5,9 @@
 }
 
 .headerWrap {
+	background-color: $color-background;
 	width: 1154px;
-	border-bottom: 1px solid $color-menu_active_item;
+	border-bottom: 1px solid $color-input_dorder;
 	border-radius: 0px 0px 20px 20px;
 	box-shadow: 0px 7px 7px 0px rgba(176, 161, 238, 0.2);
 	justify-content: space-between;
