@@ -1,0 +1,28 @@
+.headerWrap,
+.headerUserProfile,
+.headerUserAccount {
+	@include flex_row;
+}
+
+.headerWrap {
+	width: 1154px;
+	border-bottom: 1px solid $color-menu_active_item;
+	border-radius: 0px 0px 20px 20px;
+	box-shadow: 0px 7px 7px 0px rgba(176, 161, 238, 0.2);
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 50px 12px 32px;
+}
+
+.headerText {
+	font-size: 24px;
+	line-height: 24px;
+
+	span {
+		color: $color-menu_active_item;
+	}
+}
+
+.headerUserAccount {
+	margin-left: 14px;
+}
